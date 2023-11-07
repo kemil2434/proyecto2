@@ -51,7 +51,7 @@ Route::get('/pagina-web',
 
     Route::get('/lista-productos', [ProductoController::class,'listaProducto'])->name('lista-producto');
 
-    Route::get('/lista-productos/{id_producto}',[ProductoController::class, 'mostrarProducto'])->name('mostrar-producto');
+    Route::get('/lista-productos/{id}',[ProductoController::class, 'mostrarProducto'])->name('mostrar-producto');
     
     
-      
+    

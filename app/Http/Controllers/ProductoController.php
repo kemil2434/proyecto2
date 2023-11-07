@@ -10,17 +10,18 @@ class ProductoController extends Controller
     public function listaProducto(){
 
         try{
-            DB::connection()->getPdo();
-            toast('Success Toast','success');
+            DB::connection()->getPDO();
+            $nombre_dn = DB::connection()->getDatabaseName();
+            alert()->success('Exitoso', $nombre_dn)->toToast();
         }catch(Exception $ex){
             //toast('Success Toast','error');
-            alert()->error('Post Created', $ex->getMessage())->toToast();
+            alert()->error('Error', $ex->getMessage())->toToast();
         }
 
         $productos = Producto:: all ();
         /*$productos = [
             [
-            "productoID"=> "2",
+            "id"=> "2",
             "nombre"=> "Sudadera con capucha 30 ",
             "categoria"=> "ropa ",
             "descripcion"=> "Deportiva, Moderna",
@@ -30,7 +31,7 @@ class ProductoController extends Controller
             "fecha-registro"=> "23/12/23",  
             ],
             [
-            "productoID"=> "5",
+            "id"=> "5",
             "nombre"=> "sudadera-nike26",
             "categoria"=> "ropa",
             "descripcion"=> "Caliente, Suave",
@@ -41,7 +42,7 @@ class ProductoController extends Controller
          
             ],
             [
-            "productoID"=> "5",
+            "id"=> "5",
             "nombre"=> "sudadera-nike43",
             "categoria"=> "ropa",
             "descripcion"=> "Abrazadora, Versátil",
@@ -51,7 +52,7 @@ class ProductoController extends Controller
             "fecha-registro"=> "17/08/23 ",
             ],
             [
-            "productoID"=> "7",
+            "id"=> "7",
             "nombre"=> "Sudadera deportiva",
             "categoria"=> "ropa",
             "descripcion"=> "Sudadera: Cómoda" ,
@@ -61,7 +62,7 @@ class ProductoController extends Controller
             "fecha-registro"=> "18/08/23",
             ],
             [
-            "productoID"=> "6",
+            "id"=> "6",
             "nombre"=> "Sudadera adidas",
             "categoria"=> "ropa",
             "descripcion"=> "Lujosa, Exclusiva",
@@ -72,17 +73,20 @@ class ProductoController extends Controller
             ],
            
         ];*/
-         
+    
+
+
+
         //dd($productos);
         return view("lista-productos",compact('productos'));
 
     }
 
-    public function mostrarProducto(Request $request, $id_producto){
+    public function mostrarProducto(Request $request, $id){
 
          //dd($request);
 
-         return view ('mostrar-producto',compact('id_producto'));
+         return view ('mostrar-producto',compact('id'));
 
     }
 }

@@ -86,8 +86,8 @@
 
        <td class="text-center">
        
-        <a href="{{ route('mostrar-producto',$producto['productoID']) }}"type="button" class="btn btn-info">Ver Producto</a>
-        <a href="{{ route('mostrar-producto',$producto['productoID']) }}"type="button" class="btn btn-success">Comprar Ahora</a>
+        <a href="{{ route('mostrar-producto',$producto['id']) }}"type="button" class="btn btn-info">Ver Producto</a>
+        <a href="{{ route('mostrar-producto',$producto['id']) }}"type="button" class="btn btn-success">Comprar Ahora</a>
       
 
                             </td>

@@ -12,7 +12,7 @@
     <div class="alert alert-primary" role="alert">
     A simple primary alert—check it out!
     </div>
-    <h1>Diego Frank</h1>
+    <h1>TIENDA SHOPP</h1>
     <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -35,7 +35,7 @@
 
 
 <div class="card" style="width: 18rem;">
-  <img src="https://libbys.es/wordpress/wp-content/uploads/2015/03/zumos-eeuu.jpg" class="card-img-top" alt="...">
+  <img src="OIG5.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
