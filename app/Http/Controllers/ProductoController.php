@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Producto;
+use Exception;
 class ProductoController extends Controller
 {
-    public function listaProducto(){
+    public function listarProducto(){
 
         try{
             DB::connection()->getPDO();
             $nombre_dn = DB::connection()->getDatabaseName();
-            alert()->success('Exitoso', $nombre_dn)->toToast();
+            toast('Conexion exitosa','success');
+
         }catch(Exception $ex){
-            //toast('Success Toast','error');
             alert()->error('Error', $ex->getMessage())->toToast();
         }
+
+
 
         $productos = Producto:: all ();
         /*$productos = [

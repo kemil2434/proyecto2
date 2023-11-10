@@ -18,22 +18,60 @@
 	<div class="container">
 		<div class="flex-w flex-tr">
 			<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-				<form>
+				<form action="{{ route('guardar.persona') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+				
 					<h4 class="mtext-105 cl2 txt-center p-b-30">
-						Send Us A Message
+						LLENAR DATOS
 					</h4>
 
-					<div class="bor8 m-b-20 how-pos4-parent">
-						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-						<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
-					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">nombres</label>
+						<input type="text" class="form-control" name="nombres"id="exampleFormControlInput1" placeholder="ingrese su nombre">
+					  </div>
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">paterno</label>
+						<input type="text" class="form-control" name="paterno"id="exampleFormControlInput1" placeholder="Apelldido">
+					  </div>
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">materno</label>
+						<input type="text" class="form-control" name="materno"id="exampleFormControlInput1" placeholder="Apelldido">
+					  </div>
+			
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">foto</label>
+						<input type="file" class="form-control" name="foto"id="exampleFormControlInput1" placeholder="Buscar foto">
+					  </div>
+			
 
-					<div class="bor8 m-b-30">
-						<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
-					</div>
+					  <div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label">bibliografia</label>
+						<textarea class="form-control" name="bibliografia"id="exampleFormControlTextarea1" rows="3"></textarea>
+					  </div>
 
-					<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-						Submit
+                      <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">documento</label>
+						<input type="text" class="form-control" name="documento" id="exampleFormControlInput1" placeholder="ingrese su documento">
+					  </div>
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">celular</label>
+						<input type="text" class="form-control" name="celular" id="exampleFormControlInput1" placeholder="su numero de celular">
+					  </div>
+					
+					  <select class="form-select" aria-label="Default select example">
+						<option selected>Categoria</option>
+						<option value="1">manzana</option>
+						<option value="2">pera</option>
+						<option value="3">Three</option>
+					  </select>
+
+
+
+
+
+
+					<button type = "submit" class= " flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+						Guardar Datos
 					</button>
 				</form>
 			</div>

@@ -31,6 +31,8 @@ Route::get('/lista-personas',
  [PersonaController::class, 'listarPersona']
 )->name('lista-personas');
 
+
+
 Route::get('/lista-personas/{id_persona}',
 [PersonaController::class, 'mostrarPersona']
 )->name('mostrar-personas');
@@ -40,13 +42,25 @@ Route::get('/lista-personas/{id_persona}',
 //Pagina web
 Route::get('/pagina-web',
 [PaginaWebController::class, 'verPaginaWeb']
-)->name('pagina-web');
+)->name('pagina-web');//funcion
 //------------------------------------------------------------------------------
 
+//rutas de persona
 
 Route::get('/pagina-web/registro-persona',
 [RegistroPersonaWebController::class, 'registroPersona']
 )->name('registro.persona');
+
+
+Route::post('/pagina-web/guardar-persona',
+[RegistroPersonaWebController::class, 'guardarPersona']
+)->name('guardar.persona');
+
+
+// rutas de personas fin
+
+
+
 
   
 
@@ -56,9 +70,15 @@ Route::get('/pagina-web/registro-producto',
 )->name('registro.producto');
 
 
+Route::post('/pagina-web/guardar-producto',
+[RegistroProductoWebController::class, 'guardarProducto']
+)->name('guardar.producto');
+
+
+
    
   
-   //categoria descripcion img precio , fecha registro
+//categoria descripcion img precio , fecha registro
 
 //Route::get('/lista-productos', function () {
 

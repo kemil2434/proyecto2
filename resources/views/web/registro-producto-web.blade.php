@@ -18,22 +18,69 @@
 	<div class="container">
 		<div class="flex-w flex-tr">
 			<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-				<form>
+				<form action="{{ route('guardar.producto') }}" method="POST" enctype="multipart/form-data">
+					@csrf
+
+
 					<h4 class="mtext-105 cl2 txt-center p-b-30">
-						Send Us A Message
+						LLENAR DATOS
 					</h4>
 
-					<div class="bor8 m-b-20 how-pos4-parent">
-						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-						<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
-					</div>
+                    <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">ID</label>
+						<input type="text" class="form-control" name="ID" id="exampleFormControlInput1" placeholder="ID ">
+					  </div>
 
-					<div class="bor8 m-b-30">
-						<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
-					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">nombre</label>
+						<input type="text" class="form-control" name="nombre" id="exampleFormControlInput1" placeholder="ingrese su nombre">
+					  </div>
 
-					<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-						Submit
+
+					  <label for="exampleFormControlInput1" class="form-label">Categoria</label>
+					  <select class="form-select" aria-label="Default select example">
+						<option selected>Categoria</option>
+						<option value="1">sudadera</option>
+						<option value="3">ropa</option>
+					  </select>
+
+					  <div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+						<textarea type="text" class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+					  </div>
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">Imagen</label>
+						<input type="file" class="form-control" name="imagen"id="exampleFormControlInput1" placeholder="Buscar foto">
+					  </div>
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">Precio</label>
+						<input type="text" class="form-control" name="precio"id="exampleFormControlInput1" placeholder="precio">
+					  </div>
+					  <div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">stock</label>
+						<input type="text" class="form-control" name="stock" id="exampleFormControlInput1" placeholder="stock">
+					  </div>
+			
+					  <label for="exampleFormControlInput1" class="form-label">Fecha registro</label>
+
+					  <select class="form-select" aria-label="Default select example">
+						<option selected>Fecha registro</option>
+						<option value="1">15-08-2023</option>
+						<option value="2">30-03-2023</option>
+						<option value="3">23-05-2023</option>
+					  </select>
+
+
+
+
+
+
+
+
+
+
+					  <button type = "submit" class= " flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+						Guardar Datos
 					</button>
 				</form>
 			</div>
